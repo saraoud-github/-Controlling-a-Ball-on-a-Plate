@@ -1,0 +1,71 @@
+[System]
+Name='simpleFuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='sum'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='e'
+Range=[-0.15 0.15]
+NumMFs=5
+MF1='NL':'trapmf',[-1 -0.5 -0.1 -0.05]
+MF2='NS':'trimf',[-0.1 -0.04999 0]
+MF3='Z':'trimf',[-0.05 0 0.05]
+MF4='PS':'trimf',[0 0.05 0.1]
+MF5='PL':'trapmf',[0.05 0.1 0.5 1]
+
+[Input2]
+Name='e-dot'
+Range=[-0.3 0.3]
+NumMFs=5
+MF1='NL':'trapmf',[-15 -14.4 -0.1876 -0.1125]
+MF2='NS':'trimf',[-0.2 -0.09996 -2.787e-05]
+MF3='Z':'trimf',[-0.0756 0 0.0756]
+MF4='PS':'trimf',[-4.274e-05 0.09996 0.1999]
+MF5='PL':'trapmf',[0.1125 0.1876 14.4 15]
+
+[Output1]
+Name='theta'
+Range=[-0.1 0.1]
+NumMFs=7
+MF1='NL':'trimf',[-0.3 -0.1 -0.06664]
+MF2='NM':'trimf',[-0.1 -0.06664 -0.03332]
+MF3='NS':'trimf',[-0.06664 -0.03333 0]
+MF4='Z':'trimf',[-0.03333 0 0.03333]
+MF5='PS':'trimf',[0 0.03333 0.06668]
+MF6='PM':'trimf',[0.03332 0.06668 0.1]
+MF7='PL':'trimf',[0.06668 0.1 0.3]
+
+[Rules]
+5 1, 3 (1) : 1
+5 2, 3 (1) : 1
+5 3, 6 (1) : 1
+5 4, 7 (1) : 1
+5 5, 7 (1) : 1
+4 1, 2 (1) : 1
+4 2, 3 (1) : 1
+4 3, 5 (1) : 1
+4 4, 6 (1) : 1
+4 5, 7 (1) : 1
+3 1, 1 (1) : 1
+3 2, 3 (1) : 1
+3 3, 4 (1) : 1
+3 4, 5 (1) : 1
+3 5, 7 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 3 (1) : 1
+2 4, 5 (1) : 1
+2 5, 6 (1) : 1
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 2 (1) : 1
+1 4, 3 (1) : 1
+1 5, 5 (1) : 1
